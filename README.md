@@ -1,9 +1,5 @@
 # Setting up AWS Database Migration Service (DMS) to transfer data from an on-premises Microsoft SQL Server (MS SQL) to an Amazon S3 bucket
 
-
-
-### Step 1: Prepare the Environment
-
 1. **Create an Amazon S3 Bucket:**
    - Sign in to the AWS Management Console.
    - Open the Amazon S3 console.
@@ -59,25 +55,34 @@
    - **Source Endpoint (MS SQL Server):**
      - Specify the connection details for your on-premises SQL Server.
      - Test the connection to ensure DMS can access the database.
+     ![image](https://hackmd.io/_uploads/SJHHXqrHC.png)
+
    - **Target Endpoint (Amazon S3):**
      - Specify the S3 bucket details.
      - Provide the ARN of the IAM role created earlier.
      - Test the connection to ensure DMS can access the S3 bucket.
+     ![image](https://hackmd.io/_uploads/ryN5E5SrA.png)
+
 
 3. **Create a Migration Task:**
    - Define a new task to migrate data from the source endpoint (MS SQL Server) to the target endpoint (Amazon S3).
    - Configure the task settings, such as table mappings, transformation rules, and any other relevant options.
    - Start the task and monitor its progress.
+   ![image](https://hackmd.io/_uploads/ryhi89HHC.png)
+
 
 ### Step 4: Monitor and Validate
 
 1. **Monitor the Migration:**
    - Use the AWS DMS console to monitor the status of the replication instance, endpoints, and migration task.
    - Check CloudWatch logs for any errors or issues.
+   ![image](https://hackmd.io/_uploads/HyTe_9SBC.png)
+
 
 2. **Validate the Data:**
    - Once the migration task completes, validate the data in the S3 bucket to ensure it matches the source data.
    - Use tools like AWS Glue or Amazon Athena to query and analyze the data in S3 if needed.
+   ![image](https://hackmd.io/_uploads/BkBdd5HrA.png)
 
 
 
